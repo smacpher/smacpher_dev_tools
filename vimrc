@@ -55,6 +55,8 @@ func! FancyMode()
  setlocal hlsearch
  " show search matches as you type; increment through them
  setlocal incsearch
+ " set column at 80 characters.
+ setlocal colorcolumn=80
  " show syntax coloring
  syntax on
 
@@ -67,9 +69,9 @@ func! UndoFancyMode()
  setlocal noignorecase
  setlocal nohlsearch
  setlocal noincsearch
+ setlocal colorcolumn=
  syntax off
 endfu
 
 com! Fancy call FancyMode()
 com! NoFancy call UndoFancyMode()
-
